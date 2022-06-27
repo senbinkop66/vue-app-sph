@@ -3,6 +3,9 @@ import App from './App.vue'
 
 //引入路由，注册路由功能
 import router from './router';
+//注册仓库功能
+import store from './store';
+
 
 Vue.config.productionTip = false
 
@@ -14,6 +17,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import TypeNav from "@/components/TypeNav";
 
+
 Vue.component(Header.name, Header);
 Vue.component(Footer.name, Footer);
 Vue.component(TypeNav.name, TypeNav);
@@ -21,5 +25,7 @@ Vue.component(TypeNav.name, TypeNav);
 new Vue({
   //下面代码作用:给项目添加路由功能,给全部VC实例身上拥有两个属性,$router|$route
   router,
+  //下面的代码作用:给项目添加仓库功能,主要的作用是给全部VC拥有一个$store属性
+  store,
   render: h => h(App),
 }).$mount('#app');

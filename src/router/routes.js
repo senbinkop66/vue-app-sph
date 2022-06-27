@@ -13,14 +13,14 @@ export default [
     //路由元信息,新学习的一个配置项!!!!给当前路由添加一些额外数据
     //它的右侧是一个对象[可以有多个键值对]
     //路由配置项：书写的时候不要胡写、乱写、瞎写【在VC组件身上获取不到,没有任何意义】
-    meta: { show: true },
+    meta: { isHideFooter: false },
   },
   {
     //命名路由,给路由起一个名字
     name: "search",
     path: "/search/:keyword?",
     component: Search,
-    meta: { show: true },
+    meta: {isHideFooter: true },
     //新增配置项:props,给路由组件传递props参数
         //第一种布尔模式,相当于把params参数，作为props属性值传递给这个路由组件
         // props:true,
@@ -38,12 +38,12 @@ export default [
   {
     path: "/login",
     component: Login,
-    meta: { show: false },
+    meta: { isHideFooter: true },
   },
   {
     path: "/register",
     component: Register,
-    meta: { show: true },
+    meta: { isHideFooter: false },
   },
   //重定向到首页
   {
