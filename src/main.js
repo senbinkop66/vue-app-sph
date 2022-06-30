@@ -6,6 +6,9 @@ import router from './router';
 //注册仓库功能
 import store from './store';
 
+//引入mockServe文件,让咱们模拟接口跑起来
+import "@/mock/mockServe.js"
+
 
 Vue.config.productionTip = false
 
