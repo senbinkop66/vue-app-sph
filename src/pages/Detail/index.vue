@@ -354,14 +354,13 @@
 		mounted() {
 			//派发action:详情模块发请求需要携带商品的id
 			this.$store.dispatch("getDetailInfo", this.$route.params.skuId);
-			console.log("我是详情页的mounted,发请求获取详情的数据");
+			// console.log("我是详情页的mounted,发请求获取详情的数据");
 		},
 		computed: {
 			...mapGetters(["categoryView", "skuInfo", "spuSaleAttrList"]),
 		},
 		methods: {
 			changeChecked(saleAttrValue, arr) {
-				console.log(this.skuInfo);
 				//响应式数据:对象、数组
 				//数组的响应式数据:变更、替换【基本类型数据、引用类型对象响应式的】
 				//数组里面是基本类型数据：替换、变更    如果对象，不管你怎么玩都是相应的!!!!

@@ -4,6 +4,8 @@ import Search from "@/pages/Search";
 import Login from "@/pages/Login";
 import Register from "@/pages/Register";
 import Detail from "@/pages/Detail";
+import AddCartSuccess from "@/pages/AddCartSuccess";
+import ShopCart from "@/pages/ShopCart";
 
 
 export default [
@@ -42,6 +44,16 @@ export default [
     meta: { isHideFooter: false },
   },
   {
+    path: "/addcartsuccess",
+    component: AddCartSuccess,
+    meta: { isHideFooter: false },
+  },
+  {
+    path: "/shopcart",
+    component: ShopCart,
+    meta: { isHideFooter: false },
+  },
+  {
     path: "/login",
     component: Login,
     meta: { isHideFooter: true },
@@ -49,7 +61,7 @@ export default [
   {
     path: "/register",
     component: Register,
-    meta: { isHideFooter: false },
+    meta: { isHideFooter: true },
   },
   //重定向到首页
   {

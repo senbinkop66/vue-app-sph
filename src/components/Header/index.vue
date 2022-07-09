@@ -14,13 +14,13 @@
 					</p>
 					<!-- 如果登录了，就显示用户名字与退出登录 -->
 					<p>
-						<a>用户名</a>
+						<a>{{ userName || "用户名" }}</a>
 						<a class="register" @click="logout">退出登录</a>
 					</p>
 				</div>
 				<div class="typeList">
-					<a href="#">我的订单</a>
-					<a href="#">我的购物车</a>
+					<router-link to="/center">我的订单</router-link>
+					<router-link to="/shopcart">我的购物车</router-link>
 					<a href="#">我的尚品汇</a>
 					<a href="#">尚品汇会员</a>
 					<a href="#">企业采购</a>
@@ -51,6 +51,8 @@
 </template>
 
 <script>
+	import { mapGetters } from 'vuex';
+
 	export default {
 		//给组件起一个名字,开发者工具中显示这个组件的时候，显示的就是这个名字
 		name: "Header",
@@ -58,7 +60,11 @@
 			return {
 				// 用户输入的关键词
 				keyword: "",
+				
 			}
+		},
+		computed: {
+			...mapGetters(["userName"]),
 		},
 		methods: {
 			// 搜索按钮的回调
@@ -93,7 +99,7 @@
 			},
 			// 退出登录的按钮的回调
 			logout() {
-
+				this.$store.dispatch("logout");
 			}
 		},
 		mounted() {

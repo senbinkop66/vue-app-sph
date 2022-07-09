@@ -25,6 +25,11 @@ requests.interceptors.request.use(config => {
   //进度条开始
   NProgress.start();
 
+  if (store.state.shopcart.USER_ID) {
+    //游客身份
+    config.headers.userTempId = store.state.shopcart.USER_ID;
+  }
+
   // 必须返回配置对象
   return config;
 });
@@ -40,7 +45,7 @@ requests.interceptors.response.use((response) => {
   //温馨提示:某一天发请求,请求失败,请求失败的信息打印出来
   console.log(err.message);
   //终止Promise链
-  return new Promise();
+  return Promise.reject();
 });
 
 //最后需要暴露:暴露的是添加新的功能的axios,即为requests
