@@ -97,8 +97,12 @@
 			}
 		},
 		mounted() {
-
-		}
+			//清除关键字
+			this.$bus.$on("clearKeyword", () => {
+				// console.log("clearKeyword");
+				this.keyword = "";
+			});
+		},
 	}
 </script>
 

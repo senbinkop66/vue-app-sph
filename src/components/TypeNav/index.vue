@@ -84,14 +84,14 @@
         this.currentIndex = -1;
         //隐藏商品分类
         //鼠标离开:在search路由下,在修改数据
-        if (this.$route.path === "/home") {
+        if (this.$route.path !== "/home") {
           this.show = false;
         }
       },
       //全部商品分类鼠标进入
       changeShow() {
         //鼠标进入:在search路由下,在修改数据
-        if (this.$route.path === "/home") {
+        if (this.$route.path !== "/home") {
           this.show = true;
         }
       },

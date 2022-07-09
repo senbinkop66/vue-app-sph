@@ -19,13 +19,21 @@ Vue.config.productionTip = false
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import TypeNav from "@/components/TypeNav";
+import Pagination from "@/components/Pagination";
+
 
 
 Vue.component(Header.name, Header);
 Vue.component(Footer.name, Footer);
 Vue.component(TypeNav.name, TypeNav);
+Vue.component(Pagination.name, Pagination);
 
 new Vue({
+  //配置全局事件总线
+  beforeCreate(){
+    //配置全局事件总线
+    Vue.prototype.$bus = this;
+  },
   //下面代码作用:给项目添加路由功能,给全部VC实例身上拥有两个属性,$router|$route
   router,
   //下面的代码作用:给项目添加仓库功能,主要的作用是给全部VC拥有一个$store属性

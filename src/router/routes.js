@@ -3,6 +3,7 @@ import Home from "@/pages/Home";
 import Search from "@/pages/Search";
 import Login from "@/pages/Login";
 import Register from "@/pages/Register";
+import Detail from "@/pages/Detail";
 
 
 export default [
@@ -20,7 +21,7 @@ export default [
     name: "search",
     path: "/search/:keyword?",
     component: Search,
-    meta: {isHideFooter: true },
+    meta: { isHideFooter: true },
     //新增配置项:props,给路由组件传递props参数
         //第一种布尔模式,相当于把params参数，作为props属性值传递给这个路由组件
         // props:true,
@@ -34,6 +35,11 @@ export default [
         //      //是将当前箭头函数返回结果，作为props传递给search路由组件!!!
         //      return {a:route.params.keyword,b:'可以传递参数'};
         // }
+  },
+  {
+    path: "/detail/:skuId?",
+    component: Detail,
+    meta: { isHideFooter: false },
   },
   {
     path: "/login",
