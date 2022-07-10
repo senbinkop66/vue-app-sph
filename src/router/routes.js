@@ -6,7 +6,13 @@ import Register from "@/pages/Register";
 import Detail from "@/pages/Detail";
 import AddCartSuccess from "@/pages/AddCartSuccess";
 import ShopCart from "@/pages/ShopCart";
-
+import Trade from "@/pages/Trade";
+import Pay from "@/pages/Pay";
+import PaySuccess from "@/pages/PaySuccess";
+import Center from "@/pages/Center";
+//个人中心的二级路由组件
+import MyOrder from '@/pages/Center/MyOrder';
+import TeamOrder from '@/pages/Center/TeamOrder'
 
 export default [
   {
@@ -17,6 +23,16 @@ export default [
     //它的右侧是一个对象[可以有多个键值对]
     //路由配置项：书写的时候不要胡写、乱写、瞎写【在VC组件身上获取不到,没有任何意义】
     meta: { isHideFooter: false },
+  },
+  {
+    path: "/login",
+    component: Login,
+    meta: { isHideFooter: true },
+  },
+  {
+    path: "/register",
+    component: Register,
+    meta: { isHideFooter: true },
   },
   {
     //命名路由,给路由起一个名字
@@ -54,14 +70,39 @@ export default [
     meta: { isHideFooter: false },
   },
   {
-    path: "/login",
-    component: Login,
-    meta: { isHideFooter: true },
+    path: "/trade",
+    component: Trade,
+    meta: { isHideFooter: false },
   },
   {
-    path: "/register",
-    component: Register,
-    meta: { isHideFooter: true },
+    path: "/pay",
+    component: Pay,
+    meta: { isHideFooter: false },
+  },
+  {
+    path: "/paysuccess",
+    component: PaySuccess,
+    meta: { isHideFooter: false },
+  },
+  {
+    path: "/center",
+    component: Center,
+    meta: { isHideFooter: false },
+    //二级路由配置的地方
+    children: [
+      {
+        path: "myorder",
+        component: MyOrder,
+      },
+      {
+        path: "teamorder",
+        component: TeamOrder,
+      },
+      {
+        path: "/center",
+        redirect: "/center/myorder",
+      },
+    ],
   },
   //重定向到首页
   {

@@ -84,7 +84,7 @@
 										<i class="command">已有<span>{{ good.id }}人评价</span></i>
 									</div>
 									<div class="operate">
-										<a href="success-cart.html" target="_blank" class="sui-btn btn-bordered btn-danger">
+										<a href="javascript:void(0);" class="sui-btn btn-bordered btn-danger">
 											加入购物车
 										</a>
 										<a href="javascript:void(0);" class="sui-btn btn-bordered">
