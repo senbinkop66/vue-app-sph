@@ -74,7 +74,8 @@
         <div class="hr"></div>
 
         <div class="submit">
-          <a class="btn" @click="open">立即支付</a>
+          <!-- <a class="btn" @click="open">立即支付</a> -->
+          <el-button class="btn" @click="open">立即支付</el-button>
         </div>
         <div class="otherpay">
           <div class="step-tit">
@@ -123,10 +124,11 @@
       async open() {
         //生成一个二维码URL
         let url = await QRCode.toDataURL(this.payInfo.codeUrl);
+        // console.log(url);
         //第一个参数:即为内容区域
         //第二个参数:标题
         //第三个参数:组件的配置项
-        this.$alert(`<img src=${url}>`, "请你微信扫码支付", {
+        this.$alert(`<img src=${url} />`, "请你微信扫码支付", {
           dangerouslyUseHTMLString: true,  // //将字符串转换为标签
           center: true,  // 居中
           showClose: false,  // 右上角的关闭按钮不显示
@@ -152,7 +154,7 @@
               done();
               this.$message.error("支付遇见问题请联系客服")
             }
-          }
+          },
         });
         //查询支付结果,开启定时器每隔一段时间询问支付结果
         this.timer = setInterval(async () => {
@@ -181,6 +183,7 @@
 </script>
 
 <style scoped lang="less">
+
 .pay-main {
   margin-bottom: 20px;
 
@@ -330,4 +333,5 @@
     }
   }
 }
+
 </style>

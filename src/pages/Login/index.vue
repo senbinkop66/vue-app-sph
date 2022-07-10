@@ -78,10 +78,10 @@
 		data() {
 			return {
 				//收集账号与密码
-				// phone: "17844531967",
-				// password: "vueproject",
-        phone: "13700000000",
-        password: "111111",
+				phone: "17844531967",
+				password: "vueproject",
+        // phone: "13700000000",
+        // password: "111111",
 			}
 		},
 		methods: {

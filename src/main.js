@@ -28,6 +28,8 @@ Vue.component(Footer.name, Footer);
 Vue.component(TypeNav.name, TypeNav);
 Vue.component(Pagination.name, Pagination);
 
+import 'element-ui/lib/theme-chalk/index.css';
+
 //按需引入
 import { Button, Row, Col, MessageBox, Message, Input} from 'element-ui';
 //element-ui大多数组件，注册为全局组件Vue.component|Vue.use

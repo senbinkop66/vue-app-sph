@@ -1,12 +1,12 @@
 import { reqAddressInfo, reqShopInfo, reqSubmitOrder } from "@/api";
 
-let state = {
+const state = {
   address: [],
   tradeInfo: [],
   payId: "",
 };
 
-const mutataions = {
+const mutations = {
   GETADDRESS(state, address) {
     state.address = address;
   },
@@ -32,7 +32,7 @@ const actions = {
   //获取商品清单
   async getShopInfo({ commit, state, dispatch }) {
     let result = await reqShopInfo();
-    console.log(result);
+    // console.log(result);
     if (result.code === 200) {
       commit("GETSHOPINFO", result.data);
       return "ok";
@@ -57,7 +57,7 @@ let getters = {};
 
 export default {
   state,
-  mutataions,
+  mutations,
   actions,
   getters
 }
